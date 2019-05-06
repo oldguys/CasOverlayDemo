@@ -1,0 +1,33 @@
+# no active config ,has been ban by cas
+#spring:
+#  datasource:
+#    password: root
+#    username: root
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/cas_demo?useUnicode=true&characterEncoding=utf8&useSSL=false
+
+cas:
+  authn:
+    jdbc:
+      query[0]:
+        driverClass: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/cas_demo?useUnicode=true&characterEncoding=utf8&useSSL=false
+        user: root
+        password: root
+        fieldPassword: password
+        sql: SELECT id,username,`password`,userid FROM user_table WHERE username = ?
+        passwordEncoder:
+          type: NONE
+  jdbc:
+    showSql: true
+    genDdl: true
+
+# cas.authn.jdbc.query[0].credentialCriteria=
+# cas.authn.jdbc.query[0].name=
+# cas.authn.jdbc.query[0].order=0
+
+# cas.authn.jdbc.query[0].sql=SELECT * FROM table WHERE name=?
+# cas.authn.jdbc.query[0].fieldPassword=password
+# cas.authn.jdbc.query[0].fieldExpired=
+# cas.authn.jdbc.query[0].fieldDisabled=
+# cas.authn.jdbc.query[0].principalAttributeList=sn,cn:commonName,givenName

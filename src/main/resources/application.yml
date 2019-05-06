@@ -1,0 +1,14 @@
+#cas:
+#  authn:
+#    accept:
+#      users:
+#        admin: root
+#        test: 123456
+
+spring:
+  profiles:
+    active: jdbc
+
+logging:
+  level:
+    root: debug
